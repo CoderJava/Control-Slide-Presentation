@@ -23,10 +23,12 @@ public class ProcessConnectionThread implements Runnable {
 		try {
 			InputStream inputStream = mConnection.openInputStream();
 			System.out.println("Waiting for input");
+			MainFrame.taKeterangan.append("Waiting for input");			
 			while(true) {
 				int command = inputStream.read();
 				if(command == EXIT_CMD) {
 					System.out.println("Finish process");
+					MainFrame.taKeterangan.append("Finish process");
 					break;
 				}
 				processCommand(command);
@@ -45,11 +47,13 @@ public class ProcessConnectionThread implements Runnable {
 					robot.keyPress(KeyEvent.VK_RIGHT);
 					robot.keyRelease(KeyEvent.VK_RIGHT);
 					System.out.println("Command: Right");
+					MainFrame.taKeterangan.append("Command: Right\n");					
 					break;
 				case KEY_LEFT:
 					robot.keyPress(KeyEvent.VK_LEFT);
 					robot.keyRelease(KeyEvent.VK_LEFT);
 					System.out.println("Command: Left");
+					MainFrame.taKeterangan.append("Command: Left\n");
 					break;
 			}
 		} catch (Exception e) {

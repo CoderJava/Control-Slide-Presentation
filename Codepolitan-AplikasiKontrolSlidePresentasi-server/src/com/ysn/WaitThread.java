@@ -38,6 +38,7 @@ public class WaitThread implements Runnable {
 		while(true) {
 			try {
 				System.out.println("Waiting for connection . . .");
+				MainFrame.taKeterangan.append("Waiting for connection . . .\n");
 				connection = notifier.acceptAndOpen();
 				Thread processThread = new Thread(new ProcessConnectionThread(connection));
 				processThread.start();

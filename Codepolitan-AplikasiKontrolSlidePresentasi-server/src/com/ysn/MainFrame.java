@@ -27,7 +27,7 @@ import javax.swing.border.EmptyBorder;
 public class MainFrame extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
-	private JTextArea taKeterangan;
+	public static JTextArea taKeterangan;
 	private JButton btnAction;
 	private JLabel lblStatus;
 	private PopupMenu popupMenu;
@@ -70,6 +70,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		contentPane.setLayout(null);
 		
 		taKeterangan = new JTextArea();
+		taKeterangan.setEditable(false);
 		taKeterangan.setBounds(10, 11, 424, 160);
 		contentPane.add(taKeterangan);
 		
