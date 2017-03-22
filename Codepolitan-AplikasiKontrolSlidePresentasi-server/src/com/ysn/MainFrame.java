@@ -19,6 +19,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
@@ -71,8 +72,9 @@ public class MainFrame extends JFrame implements ActionListener {
 		
 		taKeterangan = new JTextArea();
 		taKeterangan.setEditable(false);
-		taKeterangan.setBounds(10, 11, 424, 160);
-		contentPane.add(taKeterangan);
+		JScrollPane scrollPane = new JScrollPane(taKeterangan);
+		scrollPane.setBounds(10, 11, 424, 160);
+		contentPane.add(scrollPane);
 		
 		btnAction = new JButton("Start/Stop");
 		btnAction.setBounds(10, 182, 89, 23);
